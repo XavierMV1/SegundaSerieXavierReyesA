@@ -1,0 +1,12 @@
+{
+  "name": "segunda-serie-xavier-reyes",
+  "version": "1.0.0",
+  "description": "App web sencilla - examen ingeniería de software",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
