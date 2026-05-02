@@ -1,28 +1,55 @@
-# Despliegue automático en Azure Web App al hacer push a main.
-# Web App: ExamenISXAVIER
-#
-# GitHub → Settings → Secrets and variables → Actions → New repository secret:
-#   nombre: AZURE_WEBAPP_PUBLISH_PROFILE
-#   valor: contenido completo del .PublishSettings (Azure Portal → Descargar perfil de publicación)
-
-name: Deploy Node.js to Azure Web App
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: ExamenISXAVIER
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: .
-
+# Despliegue automático en Azure Web App al hacer push a main.
+
+# Web App: ExamenISXAVIER
+
+#
+
+# GitHub → Settings → Secrets and variables → Actions → New repository secret:
+
+#   nombre: AZURE_WEBAPP_PUBLISH_PROFILE
+
+#   valor: contenido completo del .PublishSettings (Azure Portal → Descargar perfil de publicación)
+
+
+
+name: Deploy Node.js to Azure Web App
+
+
+
+on:
+
+  push:
+
+    branches:
+
+      - main
+
+
+
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+
+        uses: actions/checkout@v4
+
+
+
+      - name: Deploy to Azure Web App
+
+        uses: azure/webapps-deploy@v3
+
+        with:
+
+          app-name: ExamenISXAVIER
+
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+
+          package: .
+
+
